@@ -15,7 +15,7 @@ if (age <= 17) {
 }
 
 age <= 17 ? console.log("Underage") : console.log("18 or over");
-
+// examples of using switch statement
 let name = "billy";
 switch (name) {
   case "mike":
