@@ -18,3 +18,15 @@ while (y < 10) {
   console.log(`The value of y is ${y}`);
   y++;
 }
+
+// Extras: for ... in  iterates the key in k/v pairs
+let object = { a: 1, b: 2, c: 3 };
+for (let key in object) {
+    console.log(key, object[key]); // Output: a 1, b 2, c 3
+}
+
+// Extras: for ... of  ... iterates the value in k/v pair
+let array = ['A', 'B', 'C'];
+for (let value of array) {
+    console.log(value); // Output: A, B, C
+}
