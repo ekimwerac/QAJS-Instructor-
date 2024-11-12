@@ -23,6 +23,7 @@
 // - Parameters may be passed into a function
 //   - It may optionally return a value
 
+/*
 function sayHello() {
     alert("Hi there!");
 }
@@ -34,6 +35,7 @@ function sayHelloToSomeone(name) {
 function returnAGreetingToSomeone(name) {
     return `Hi there ${name}!`;
 }
+*/
 
 //Slide 4
 // Functions once created can be called
@@ -45,10 +47,11 @@ function returnAGreetingToSomeone(name) {
 //   - For a primitive, this is the value itself
 //   - For an object, this is a memory address
 
-sayHello();
-sayHelloToSomeone("Dave");
-let r = returnAGreetingToSomeone("Adrian");
-console.log(r);
+// sayHello();
+// sayHelloToSomeone("Dave");
+// let r = returnAGreetingToSomeone("Adrian");
+// console.log(r);
+// console.log(returnAGreetingToSomeone("Adrian"));
 
 //Slide 5
 // Can be declared as const (or let) setting a variable name to be a function
@@ -65,21 +68,20 @@ console.log(r);
 //Slide 7
 // Arrow functions - examples
 //
-const noArgFnImpRet = () => `Hello World from no arg fn`;  // returns `Hello World` when called
-const noArgFnCodeBlk = () => {
-  /* some implementation code */
-  let a = 99;
-  return a;
-};
-const sglArgFn = arg => { console.log(arg); }  // outputs value of arg
-const multiArgFn = (num1, num2) => (num1 * num2);  // outputs value when called
+// const noArgFnImpRet = () => `Hello World from no arg fn`;  // returns `Hello World` when called
+// const noArgFnCodeBlk = () => {
+//   let a = 99;
+//   return a;
+// };
+// const sglArgFn = arg => { console.log(arg); }  // outputs value of arg
+// const multiArgFn = (num1, num2) => (num1 * num2);  // outputs value when called
 
 
-console.log(noArgFnImpRet());
-sglArgFn("Hello From Single Arg Function");
+// console.log(noArgFnImpRet());
+// sglArgFn("Hello From Single Arg Function");
 
-console.log(noArgFnCodeBlk());
-console.log("12 x 12 is: " + multiArgFn(12, 12));
+// console.log(noArgFnCodeBlk());
+// console.log("12 x 12 is: " + multiArgFn(12, 12));
 
 //Slide 8
 // Default values were a long-standing problem with a fiddly solution
@@ -87,20 +89,21 @@ console.log("12 x 12 is: " + multiArgFn(12, 12));
 // - If the last named argument of a function is prefixed with ... then it’s value and all further values passed to the function will be captured as an array
 
 // When using forEach on an array in JavaScript,
-// - the callback function receives 3 arguments:
+// - the callback function receives 1, 2 or 3 arguments:
 // Current Element (curElement):
 // - The value of the element currently
 // - Index of Current Element (index)
 // - Whole Array (array)
 
-// let arr = [10, 20, 30];
-// arr.forEach((element, index, array) => {
-//     console.log("Current Element:", element);
-//     console.log("Index:", index);
-//     console.log("Whole Array:", array);
-// });
-
+//3 arg example
 /*
+let arr = [10, 20, 30];
+arr.forEach((element, index, array) => {
+    console.log("Current Element:", element);
+    console.log("Index:", index);
+    console.log("Whole Array:", array);
+});
+
 function doSomething(arg1, arg2, arg3=5) {
     return (arg1 + arg2 + arg3);
 }
@@ -113,6 +116,7 @@ function multiply(arg1, ...args) {
 console.log(multiply(5,2,5,10));  //[10,25,50], 5 = arg1, [2, 5, 10] = ...args
 
 */
+
 //Slide 9
 // Scope defines where variables can be seen
 // - Use the let keyword to specify scope to the current block
