@@ -1,16 +1,16 @@
 const colours = ['red', 'green', 'blue', 'orange', 'lime', 'olive', 'black', 'yellow'];
 
 // Steps 5-11
-// function buildP(placeholder) {
+function buildP(placeholder) {
 
-//     let p = document.createElement('p');
-//     let text = document.createTextNode(`Have you tried turning it off and back on again?`);
+    let p = document.createElement('p');
+    let text = document.createTextNode(`Have you tried turning it off and back on again?`);
 
-//     p.appendChild(text);
-//     placeholder.appendChild(p);
-// }
+    p.appendChild(text);
+    placeholder.appendChild(p);
+}
 
-// buildP(document.querySelector('#placeholder'));
+buildP(document.querySelector('#placeholder'));
 
 // Steps 12-18
 function buildP(placeholder, num) {
