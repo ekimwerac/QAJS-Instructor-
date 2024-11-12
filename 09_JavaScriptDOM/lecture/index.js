@@ -1,210 +1,84 @@
 /*
-Slide 1: Introduction
-----------------------
-Title: JavaScript & The DOM
-Purpose: Introduction slide to JavaScript and DOM concepts.
-This slide is informational only.
+Slide 6: Basic Selectors
+-------------------------
+Demonstrates selecting elements by ID, class, and tag.
+Uncomment individual selectors to see each in action.
 */
-function slide1Intro() {
-    document.getElementById("placeholder").innerText = "Introduction to JavaScript and the DOM";
-}
+
+// Select by ID
+// const introParagraph = document.getElementById("intro");
+// introParagraph.style.color = "blue";
+
+// Select by class name (all elements with class "text")
+// const textElements = document.getElementsByClassName("text");
+// Array.from(textElements).forEach((el) => {
+//     el.style.backgroundColor = "lightyellow";
+// });
+
+// Select by tag name (all paragraph elements)
+// const allParagraphs = document.getElementsByTagName("p");
+// Array.from(allParagraphs).forEach((el) => {
+//     el.style.fontStyle = "italic";
+// });
 
 /*
-Slide 2: What is the DOM?
----------------------------
-Narrative:
-The DOM represents an HTML document as a tree structure where each element is a node.
+Slide 8: Child, Container, and Attribute Selectors
+--------------------------------------------------
+Demonstrates using CSS selectors to select elements by child, container, and attribute.
 */
-function slide2DOMExplanation() {
-    document.getElementById("placeholder").innerText = `
-        The DOM (Document Object Model) represents the structure of an HTML document as a tree of nodes.
-        Each element or text in HTML is represented as a node, allowing JavaScript to interact with it.
-    `;
-}
+
+// Child selector: selects direct child links within the container
+// const childLinks = document.querySelectorAll(".child-container > a");
+// childLinks.forEach((link) => {
+//     link.style.color = "purple";
+// });
+
+// Attribute selector: selects links based on their href attributes
+// const endsWithDoc = document.querySelectorAll('a[href$=".doc"]');
+// endsWithDoc.forEach((link) => {
+//     link.style.border = "1px solid red";
+// });
+
+// const startsWithHttp = document.querySelectorAll('a[href^="http"]');
+// startsWithHttp.forEach((link) => {
+//     link.style.border = "1px solid green";
+// });
+
+// const containsName = document.querySelectorAll('a[href*="name"]');
+// containsName.forEach((link) => {
+//     link.style.border = "1px solid blue";
+// });
 
 /*
-Slide 3: The DOM Tree Structure
+Slide 10: Selecting by Position
 -------------------------------
-Description: HTML documents have a hierarchical structure, where each element except <html> is nested within another.
-*/
-function slide3DOMTree() {
-    document.getElementById("placeholder").innerText = `
-        HTML document structure:
-        - html
-          - head
-          - body
-            - div
-            - p
-        Each element is nested within another, forming a parent-child relationship.
-    `;
-}
-
-/*
-Slide 4: HTML to DOM Object Conversion
---------------------------------------
-Example: Demonstrates how an HTML <img> element is represented in the DOM.
+Uses positional selectors to highlight the first and last elements in a list or container.
 */
 
-function slide4HTMLtoDOM() {
-    document.getElementById("placeholder").innerHTML = `
-        <img id="exampleImage" src="https://via.placeholder.com/100" alt="Sample Image" title="This is a sample image">
-    `;
-    const imgElement = document.getElementById("exampleImage");
-    document.getElementById("placeholder").innerHTML += `
-        <p>Image Source: ${imgElement.src}</p>
-        <p>Image Alt Text: ${imgElement.alt}</p>
-        <p>Image Title: ${imgElement.title}</p>
-    `;
-}
+// Select the first and last paragraph within the container
+// const firstParagraph = document.querySelector("p:first-of-type");
+// firstParagraph.style.fontWeight = "bold";
+
+// const lastParagraph = document.querySelector("p:last-of-type");
+// lastParagraph.style.fontWeight = "bold";
 
 /*
-Slide 5: Selecting Elements
----------------------------
-Example of selecting elements using different JavaScript methods.
-*/
-
-function slide5SelectingElements() {
-    const byId = document.getElementById("placeholder");
-    const byTag = document.getElementsByTagName("div");
-    const byQuery = document.querySelector("#placeholder");
-
-    document.getElementById("placeholder").innerHTML = `
-        Selected by ID: ${byId.tagName} <br>
-        Selected by Tag (div): ${byTag.length} elements <br>
-        Selected by Query Selector: ${byQuery.tagName}
-    `;
-}
-
-/*
-Slide 6: Basic CSS Selectors in JavaScript
-------------------------------------------
-Explanation of CSS selector patterns for selecting elements.
-*/
-
-function slide6BasicSelectors() {
-    document.getElementById("placeholder").innerHTML = `
-        <p class="basic">Basic Selector: First paragraph selected</p>
-        <p class="basic">Second paragraph with same class</p>
-    `;
-
-    const selected = document.querySelector(".basic");
-    selected.style.color = "blue";
-}
-
-/*
-Slide 7: Attribute Selectors
+Slide 11: Adding New Content
 ----------------------------
-Example of attribute selectors in JavaScript.
+Demonstrates adding new content dynamically using JavaScript.
 */
 
-function slide7AttributeSelectors() {
-    document.getElementById("placeholder").innerHTML = `
-        <a href="file.doc">Link ending in .doc</a>
-        <a href="http://example.com">Link starting with http</a>
-        <a href="namefile.html">Link containing 'name'</a>
-    `;
-    
-    const endsWithDoc = document.querySelectorAll('a[href$=".doc"]');
-    const startsWithHttp = document.querySelectorAll('a[href^="http"]');
-    const containsName = document.querySelectorAll('a[href*="name"]');
+// Adding a new paragraph to the "output" section
+// function addNewContent() {
+//     const newParagraph = document.createElement("p");
+//     newParagraph.textContent = "This is a new paragraph added to the DOM.";
+//     document.getElementById("placeholder").appendChild(newParagraph);
+// }
+// addNewContent();
 
-    document.getElementById("placeholder").innerHTML += `
-        <p>Links ending with .doc: ${endsWithDoc.length}</p>
-        <p>Links starting with http: ${startsWithHttp.length}</p>
-        <p>Links containing 'name': ${containsName.length}</p>
-    `;
-}
-
-/*
-Slide 8: Selecting by Position
-------------------------------
-Using positional selectors in JavaScript.
-*/
-
-function slide8SelectingByPosition() {
-    document.getElementById("placeholder").innerHTML = `
-        <ul>
-            <li>Item 1</li>
-            <li>Item 2</li>
-            <li>Item 3</li>
-        </ul>
-    `;
-    const lastItem = document.querySelector("li:last-child");
-    lastItem.style.fontWeight = "bold";
-}
-
-/*
-Slide 9: Creating New Elements
-------------------------------
-Using JavaScript to create new elements and add them to the DOM.
-*/
-
-function slide9CreatingNewContent() {
-    const newElement = document.createElement("p");
-    newElement.textContent = "This paragraph was created dynamically.";
-    document.getElementById("placeholder").appendChild(newElement);
-}
-
-/*
-Slide 10: Using innerHTML and textContent
------------------------------------------
-Shows the difference between innerHTML and textContent.
-*/
-
-function slide10InnerHTML() {
-    const placeholder = document.getElementById("placeholder");
-    placeholder.innerHTML = "<strong>This content was added using innerHTML.</strong>";
-}
-
-/*
-Slide 11: Old IE Issue with innerHTML
--------------------------------------
-InnerHTML usage in older IE versions and the alternative textContent.
-This slide is informational.
-*/
-
-function slide11OldIEIssue() {
-    document.getElementById("placeholder").innerText = `
-        Older IE versions had issues with innerHTML. Use textContent for better compatibility.
-    `;
-}
-
-/*
-Slide 12: QuickLab
-------------------
-Placeholder for practical lab activities.
-*/
-
-function slide12QuickLab() {
-    document.getElementById("placeholder").innerText = "QuickLab: Try manipulating the DOM based on the examples provided.";
-}
-
-/*
-Slide 13: Review
-----------------
-Reviewing key DOM manipulation methods.
-*/
-
-function slide13Review() {
-    document.getElementById("placeholder").innerText = `
-        Key points:
-        - Selecting elements using ID, class, tag, and CSS selectors.
-        - Manipulating content with innerHTML and textContent.
-        - Creating new elements dynamically.
-    `;
-}
-
-/*
-Slide 14: Summary
------------------
-Summarizes the DOM interaction concepts covered.
-*/
-
-function slide14Summary() {
-    document.getElementById("placeholder").innerText = `
-        Summary:
-        - The DOM represents an HTML document's structure.
-        - JavaScript allows for selection, creation, and modification of elements.
-        - innerHTML, textContent, and dynamic creation are essential for DOM manipulation.
-    `;
-}
+// Using innerHTML to add styled content quickly
+// function updateContentWithInnerHTML() {
+//     const placeholder = document.getElementById("placeholder");
+//     placeholder.innerHTML = "<strong>This content was added using innerHTML.</strong>";
+// }
+// updateContentWithInnerHTML();

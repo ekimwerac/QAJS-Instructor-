@@ -4,30 +4,25 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JavaScript & The DOM Interactive Demo</title>
+    <title>JavaScript & The DOM</title>
 </head>
 <body>
     <h1>JavaScript & The DOM Interactive Demo</h1>
-    <p>Click on each button to run code examples and see the output related to each slide in the series.</p>
 
-    <div>
-        <!-- Buttons mapped to each slide -->
-        <button onclick="slide1Intro()">Slide 1: Introduction</button>
-        <button onclick="slide2DOMExplanation()">Slide 2: DOM Explanation</button>
-        <button onclick="slide3DOMTree()">Slide 3: DOM Tree</button>
-        <button onclick="slide4HTMLtoDOM()">Slide 4: HTML to DOM</button>
-        <button onclick="slide5SelectingElements()">Slide 5: Selecting Elements</button>
-        <button onclick="slide6BasicSelectors()">Slide 6: Basic Selectors</button>
-        <button onclick="slide7AttributeSelectors()">Slide 7: Attribute Selectors</button>
-        <button onclick="slide8SelectingByPosition()">Slide 8: Selecting by Position</button>
-        <button onclick="slide9CreatingNewContent()">Slide 9: Creating New Content</button>
-        <button onclick="slide10InnerHTML()">Slide 10: Using innerHTML</button>
-        <button onclick="slide11OldIEIssue()">Slide 11: Old IE Issues</button>
-        <button onclick="slide12QuickLab()">Slide 12: Quick Lab</button>
-        <button onclick="slide13Review()">Slide 13: Review</button>
-        <button onclick="slide14Summary()">Slide 14: Summary</button>
+    <!-- Basic Structure for Selection Examples -->
+    <div id="container">
+        <p id="intro">This is the introduction paragraph.</p>
+        <p class="text">This is a paragraph with the class "text".</p>
+        <p class="text">Another paragraph with the class "text".</p>
+        
+        <div class="child-container">
+            <a href="document.doc">Link ending in .doc</a>
+            <a href="https://example.com">Link starting with http</a>
+            <a href="file_with_name.html">Link containing 'name'</a>
+        </div>
     </div>
 
+    <!-- Output Area for DOM Manipulations -->
     <div id="output">
         <h2>Output:</h2>
         <div id="placeholder"></div>
