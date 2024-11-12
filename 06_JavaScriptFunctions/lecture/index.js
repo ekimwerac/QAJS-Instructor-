@@ -23,7 +23,6 @@
 // - Parameters may be passed into a function
 //   - It may optionally return a value
 
-/*
 function sayHello() {
     alert("Hi there!");
 }
@@ -35,7 +34,6 @@ function sayHelloToSomeone(name) {
 function returnAGreetingToSomeone(name) {
     return `Hi there ${name}!`;
 }
-*/
 
 //Slide 4
 // Functions once created can be called
@@ -47,10 +45,10 @@ function returnAGreetingToSomeone(name) {
 //   - For a primitive, this is the value itself
 //   - For an object, this is a memory address
 
-/*
+sayHello();
 sayHelloToSomeone("Dave");
 let r = returnAGreetingToSomeone("Adrian");
-*/
+console.log(r);
 
 //Slide 5
 // Can be declared as const (or let) setting a variable name to be a function

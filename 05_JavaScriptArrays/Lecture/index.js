@@ -5,9 +5,9 @@ let b = Array(10); //10 elements of undefined
 let c = Array("Tom", "Dick", "Harry");//3 strings elements
 let d = [1,2,3];//3 integers(numbers)
 
-// consol.log() the a array
+// console.log() the a array
 // for (let i=0; console.log("i: "+ i + ", a.length: "+ a.length), i< a.length; i++) {
-//     console.log(b[i]);
+//     console.log(a[i]); // not executed for a, a is zero length
 // }
 
 // consol.log() the b array
@@ -23,11 +23,11 @@ let d = [1,2,3];//3 integers(numbers)
 //     console.log(a[i]);
 // }
 
-// Sparse Array of predefined size
-// b[0] = "Mick";
-// b[2] = "Mac";
-// b[4] = "Paddy";
-// b[6] = "Wack";
+//Sparse Array of predefined size
+b[0] = "Mick";
+b[2] = "Mac";
+b[4] = "Paddy";
+b[6] = "Wack";
 
 // // Classic for loop
 // console.log("Classic/Standard 'for' loop")
@@ -49,18 +49,18 @@ let d = [1,2,3];//3 integers(numbers)
 
 // //Slide 6
 // //Array methods
-// let fruit = ['Apples', 'Pears', 'Bananas', 'Oranges'];
+//let fruit = ['Apples', 'Pears', 'Bananas', 'Oranges'];
 // console.log(fruit);
 
-// <string>.join() returns a string
-//let fruitString = fruit.join("---");
-// fruit is unchanged
+// // <string>.join() returns a string
+// let fruitString = fruit.join("---");
+// //fruit is unchanged
 //console.log(fruit);
 
-// Apples---Pears---Bananas---Oranges
-//console.log(fruitString);
+// // Apples---Pears---Bananas---Oranges
+// console.log(fruitString);
 
-// //Array object reverse() method
+// // //Array object reverse() method
 // console.log("Before: "+fruit);
 // let revfruit=fruit.reverse();
 // console.log("After: "+revfruit);
@@ -90,7 +90,7 @@ let d = [1,2,3];//3 integers(numbers)
 // // push()
 // console.log(fruit.push('Lemons')); //5
 
-// // ['Apples', 'Pears', 'Bananas', 'Oranges', 'Lemons']
+// // // ['Apples', 'Pears', 'Bananas', 'Oranges', 'Lemons']
 // console.log(fruit);
 // console.log("Fruit Length is: " + fruit.length + " after fruit.push('Lemons')")
 // // pop()
@@ -121,7 +121,7 @@ let d = [1,2,3];//3 integers(numbers)
 
 // Slide 11: ES2015 New methods
 // Array.from() creates a real Array out of array-like objects
-// let formElements = document.querySelectorAll("input, select, textarea");
+//let formElements = document.querySelectorAll("input, select, textarea");
 
 // // Converting NodeList to Array for manipulation
 // formElements = Array.from(formElements);
@@ -148,11 +148,11 @@ let d = [1,2,3];//3 integers(numbers)
 // let myArray = [`Chris`,`Bruford`,22];
 // console.log(myArray.find(function(n) { return n === `Bruford`}));
 
-// Slide12:
-// Similarly findIndex() returns the index of the first matching element
+// // Slide12:
+// // Similarly findIndex() returns the index of the first matching element
 // console.log("Index is: " + myArray.findIndex( n => n === `Bruford`)); // 1
 
-// // fill() overrides the specified elements
+// // // fill() overrides the specified elements
 // myArray=[`Chris`,`Bruford`,22,true];
 // console.log(myArray.fill(null)); 	// [null,null,null,null]
 // myArray=[`Chris`,`Bruford`,22,true];
