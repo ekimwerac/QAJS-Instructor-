@@ -324,4 +324,52 @@ In this case:
 - **Yes**, if you want to use the `event` object inside an anonymous function in `addEventListener`, you must specify `event` (or any name of your choice) as a parameter in the function definition.
 - Omitting the parameter means the `event` object is not accessible within that function.
 
+Q. Explain the difference between target and currentTarget of an event object
+
+The `target` and `currentTarget` properties in the `event` object both refer to elements involved in an event, but they serve different purposes and reflect different stages in the event's propagation. Here's a detailed explanation of each:
+
+### `target`
+
+- **Definition**: `event.target` refers to the **original element** that triggered the event. This is the element that the user interacted with, such as the specific button, link, or div they clicked on.
+- **Use Case**: `target` is useful when you want to know the exact element that initiated the event, especially if the event bubbles up to a parent element.
+
+### `currentTarget`
+
+- **Definition**: `event.currentTarget` refers to the element whose **event listener is currently being executed**. This is the element to which the event handler is attached.
+- **Use Case**: `currentTarget` is helpful when the event listener is attached to a parent element, and you want to know which parent element is handling the event at that particular stage in the propagation process.
+
+### Example to Illustrate the Difference
+
+Consider the following HTML structure:
+
+```html
+<div id="parent">
+    <button id="child">Click me</button>
+</div>
+```
+
+If we add an event listener to the parent `div` that listens for click events, both `target` and `currentTarget` would behave differently depending on where the click occurs:
+
+```javascript
+const parentDiv = document.getElementById("parent");
+parentDiv.addEventListener("click", function(event) {
+    console.log("Target:", event.target);         // Element that was clicked
+    console.log("CurrentTarget:", event.currentTarget); // Element handling the event (parentDiv in this case)
+});
+```
+
+- **When clicking the button (`#child`) inside `#parent`**:
+  - `event.target` will be the button element (`<button id="child">Click me</button>`), as it is the element that was clicked.
+  - `event.currentTarget` will be the parent div (`<div id="parent">`), as that is the element where the event listener was attached and is currently handling the event.
+
+- **When clicking directly on the div (`#parent`)**:
+  - Both `event.target` and `event.currentTarget` will refer to `#parent` since the click originated on `#parent`, and it’s also where the event listener is attached.
+
+### Summary
+
+- `target`: Refers to the element that **originally triggered** the event, regardless of where the event listener is attached.
+- `currentTarget`: Refers to the element whose **event listener is currently executing**.
+
+This distinction is especially useful when using **event delegation**—attaching a single event listener to a parent element to handle events triggered by its child elements.
+
 
