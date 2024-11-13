@@ -55,7 +55,8 @@ Event capturing: Event starts from the outermost element and goes inward.
 document.getElementById("parentDiv").addEventListener("click", () => alert("Parent Div Clicked (Bubbling)"), false);
 document.getElementById("childDiv").addEventListener("click", (e) => {
     alert("Child Div Clicked");
-    e.stopPropagation();  // Prevents bubbling to parent
+    // comment out the following line to allow propogation.
+    // e.stopPropagation();  // Prevents bubbling to parent
 }, false);
 
 /*
@@ -67,12 +68,14 @@ Removing event listeners with removeEventListener.
 // Uncomment to demonstrate
 const removeEventButton = document.getElementById("removeEventButton");
 function showAlert() {
-    alert("Event Listener Active");
+    alert("Event Listener Active, but will be removed");
+    removeEventButton.removeEventListener("click", showAlert);
+
 }
 removeEventButton.addEventListener("click", showAlert);
 
 // Uncomment the following to remove event listener
-removeEventButton.removeEventListener("click", showAlert);
+// removeEventButton.removeEventListener("click", showAlert);
 
 /*
 Slides 16 & 17: The Event Object
@@ -81,10 +84,10 @@ Demonstrating the event object properties and stopPropagation/preventDefault.
 */
 
 // Uncomment to demonstrate
-document.getElementById("childDiv").addEventListener("mousedown", function(event) {
-    alert(`Mouse at (${event.pageX}, ${event.pageY})`);
-    event.stopPropagation();  // Prevents bubbling
-});
+// document.getElementById("childDiv").addEventListener("mousedown", function(event) {
+//     alert(`Mouse at (${event.pageX}, ${event.pageY})`);
+//     // event.stopPropagation();  // Prevents bubbling
+// });
 
 /*
 Slide 18: The 'this' Keyword
