@@ -34,23 +34,33 @@ usernameInput.addEventListener("change", function() {
     console.log("Username field value changed:", usernameInput.value);
 });
 
+// Change Event for Password Input
+passwordInput.addEventListener("change", function() {
+    console.log("Password field value changed.");
+});
+
+// Change Event for Comments Textarea
+commentTextarea.addEventListener("change", function() {
+    console.log("Comments field value changed:", commentTextarea.value);
+});
+
 /*
-Radio Button Selection Logging
--------------------------------
-Attaches change event listeners to each radio button in the card type group
+Radio Button Selection Logging for Drink Choice
+-----------------------------------------------
+Attaches change event listeners to each radio button in the drink group
 to log the selected value whenever it changes.
 */
 
 // Function to log selected radio button value
-function checkSelection(event) {
+function logDrinkSelection(event) {
     const selectedValue = event.target.value;
-    console.log("Selected drink type:", selectedValue);
+    console.log("Selected drink:", selectedValue);
 }
 
-// Adding change event listeners to radio buttons
-let drinkTypeRadios = document.querySelectorAll('input[name="drink"]');
-for (let i = 0; i < drinkTypeRadios.length; i++) {
-    drinkTypeRadios[i].addEventListener("change", checkSelection);
+// Adding change event listeners to drink selection radio buttons
+let drinkRadios = document.querySelectorAll('input[name="drink"]');
+for (let i = 0; i < drinkRadios.length; i++) {
+    drinkRadios[i].addEventListener("change", logDrinkSelection);
 }
 
 /*
@@ -67,7 +77,7 @@ form.addEventListener("submit", function(event) {
     const password = passwordInput.value.trim();
     const comments = commentTextarea.value.trim();
     const title = titleSelect.value;
-    const selectedDrinkType = Array.from(drinkTypeRadios).find(radio => radio.checked)?.value || "None";
+    const selectedDrink = Array.from(drinkRadios).find(radio => radio.checked)?.value || "None";
 
     // Validation
     if (username === "" || password === "") {
@@ -81,11 +91,11 @@ form.addEventListener("submit", function(event) {
     console.log("Password:", password);  // Note: Avoid logging passwords in real applications
     console.log("Comments:", comments);
     console.log("Title:", title);
-    console.log("Selected Card Type:", selectedDrinkType);
+    console.log("Selected Drink:", selectedDrink);
 
     document.getElementById("output").innerText = `Form Submitted!
     Username: ${username}
     Title: ${title}
-    Selected Drink Type: ${selectedDrinkType}
+    Selected Drink: ${selectedDrink}
     Comments: ${comments}`;
 });

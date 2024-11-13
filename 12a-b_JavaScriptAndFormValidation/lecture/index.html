@@ -11,11 +11,15 @@
 
     <form id="demoForm" action="/submit" method="POST">
         <label for="username">Username:</label>
-        <input type="text" id="username" name="username" required><br><br>
-
+        <input type="text" id="username" name="username" ><br><br>
+<!--    commented this line to remove the required attribute to test for no username
+        <input type="text" id="username" name="username" required><br><br>  
+-->
         <label for="password">Password:</label>
+        <input type="password" id="password" name="password" ><br><br>
+<!--  commented this line to remove the required attribute to test for no username
         <input type="password" id="password" name="password" required><br><br>
-
+-->
         <label for="comments">Comments:</label>
         <textarea id="comments" name="comments" rows="4" cols="30"></textarea><br><br>
 
