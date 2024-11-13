@@ -1,0 +1,17 @@
+/* CSS file for demonstration of specificity and classes */
+.box {
+    width: 200px;
+    height: 100px;
+    background-color: lightblue;
+    border: 2px solid black;
+}
+
+.highlight {
+    background-color: yellow;
+    font-weight: bold;
+}
+
+.special {
+    color: green;
+    border: 2px dashed blue;
+}

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Manipulating Styles</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>JavaScript Manipulating Styles</h1>
+    
+    <p id="para1" style="background-color: #b6ff00; border: 1px solid red;">This paragraph has inline styles.</p>
+    <p id="para2">This paragraph will be styled with JavaScript.</p>
+    <div id="container" class="box">This is a div container.</div>
+
+    <button onclick="inspectStyleObject()">Inspect Style Object</button>
+    <button onclick="modifyStyleObject()">Modify Style Object</button>
+    <button onclick="demonstrateSpecificity()">Demonstrate Specificity</button>
+    <button onclick="setMultipleProperties()">Set Multiple Properties</button>
+    <button onclick="applyCSSClasses()">Apply CSS Classes</button>
+    <button onclick="getComputedStyleDemo()">Get Computed Style</button>
+    <button onclick="toggleClasses()">Add/Remove Classes</button>
+
+    <div id="output"></div>
+
+    <script src="index.js"></script>
+</body>
+</html>
