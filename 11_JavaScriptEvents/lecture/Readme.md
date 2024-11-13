@@ -225,3 +225,103 @@ Arrow functions don’t have their own 'this' context; they inherit it from the 
 1. **Load the HTML File**: Open `index.html` in a browser.
 2. **Uncomment Code as Needed**: In `index.js`, uncomment specific code blocks to see each example in action.
 3. **Observe Console and Alerts**: Some examples output to the console (`console.log()`), while others use alerts to demonstrate functionality.
+
+
+### WRT the Event Object
+
+Q. Explain how the event object is passed to the event handler when using addEventListener.
+
+The slide discusses limitations when using `addEventListener` to attach an event handler to an element, specifically related to passing parameters to the handler function.
+
+### Key Points Explained
+
+1. **No Parameters Directly Passed to Event Handlers in `addEventListener`**
+   - When using `addEventListener`, you specify an event and a function to execute. However, `addEventListener` does not allow you to directly pass custom parameters to this function when the event occurs.
+   - The only argument automatically passed to the event handler function is the `event` object, which contains information about the event (e.g., the type of event, the target element, mouse coordinates, etc.).
+
+   For example:
+   ```javascript
+   button.addEventListener("click", function() {
+       alert("Button clicked!"); // No custom parameters passed here
+   });
+   ```
+
+2. **Using an Anonymous Function to "Get Around" This Limitation**
+   - You can work around this limitation by using an anonymous function as a wrapper. The anonymous function itself doesn’t need parameters, but it can call another function inside it and pass parameters to that inner function.
+   - This approach lets you "indirectly" pass parameters to a function when handling an event.
+
+   For example:
+   ```javascript
+   function changeClass(element, newClass) {
+       element.className = newClass;
+   }
+
+   button.addEventListener("click", function() {
+       changeClass(button, "highlight"); // Now you can pass parameters to changeClass
+   });
+   ```
+   - Here, the anonymous function doesn’t take any parameters directly. But inside this anonymous function, you can call `changeClass` with any parameters you want, including the button element and the new class name.
+
+### The Event Object as an "Exception"
+   - The slide mentions that the event object is an "exception" because it’s automatically passed to event handler functions by default. This means the `event` object is available in your handler function without needing to explicitly pass it.
+
+   ```javascript
+   button.addEventListener("click", function(event) {
+       console.log(event.target); // `event` is automatically passed to the function
+   });
+   ```
+
+### Clarifying the Grammar
+
+The slide’s wording can be a bit unclear. Here’s a clearer way to express it:
+
+> When using `addEventListener`, custom parameters cannot be directly passed to the event handler function. The only parameter automatically passed to the handler is the `event` object, which contains details about the event. To work around this limitation, you can use an anonymous function that calls another function and passes parameters to it.
+
+In summary:
+- **No, you cannot pass parameters directly to the event handler function in `addEventListener`**.
+- **Yes, you can pass parameters indirectly by using an anonymous function** as a wrapper, which then calls another function with parameters.
+
+Q. with the anonymous function, must we specify the event object as the argument (in our example 'event'), if we desire to use it?
+
+Yes, if you want to access the `event` object within an anonymous function in an `addEventListener` handler, you must specify it as a parameter of the anonymous function.
+
+### Why This Is Necessary
+
+The `event` object is automatically passed to the event handler function, but if you want to reference it, you need to explicitly name it as a parameter. JavaScript won’t implicitly make the `event` object available inside the function unless you declare it.
+
+### Example with `event` Specified
+
+Here’s an example where we use an anonymous function in `addEventListener`, specifying `event` as a parameter so we can access it:
+
+```javascript
+button.addEventListener("click", function(event) {
+    console.log("Event type:", event.type);  // Accessing event object
+    console.log("Button clicked:", event.target);  // Accessing event target
+    changeClass(event.target, "highlight");  // Passing the event target as a parameter
+});
+```
+
+In this example:
+- `event` is passed to the anonymous function as a parameter.
+- This allows you to use properties of the `event` object, such as `event.type` (to see the type of event) or `event.target` (to see the element that triggered the event).
+
+### Example without `event` Specified
+
+If you omit the `event` parameter, the `event` object is not available in the function:
+
+```javascript
+button.addEventListener("click", function() {
+    // console.log(event); // This would cause an error because event is not defined
+    changeClass(button, "highlight");
+});
+```
+
+In this case:
+- Since `event` is not specified as a parameter, trying to use `event` would result in an error (`event is not defined`).
+
+### Summary
+
+- **Yes**, if you want to use the `event` object inside an anonymous function in `addEventListener`, you must specify `event` (or any name of your choice) as a parameter in the function definition.
+- Omitting the parameter means the `event` object is not accessible within that function.
+
+
