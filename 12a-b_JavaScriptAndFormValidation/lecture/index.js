@@ -44,13 +44,13 @@ to log the selected value whenever it changes.
 // Function to log selected radio button value
 function checkSelection(event) {
     const selectedValue = event.target.value;
-    console.log("Selected card type:", selectedValue);
+    console.log("Selected drink type:", selectedValue);
 }
 
 // Adding change event listeners to radio buttons
-let cardtypeRadios = document.querySelectorAll('input[name="cardtype"]');
-for (let i = 0; i < cardtypeRadios.length; i++) {
-    cardtypeRadios[i].addEventListener("change", checkSelection);
+let drinkTypeRadios = document.querySelectorAll('input[name="drink"]');
+for (let i = 0; i < drinkTypeRadios.length; i++) {
+    drinkTypeRadios[i].addEventListener("change", checkSelection);
 }
 
 /*
@@ -67,7 +67,7 @@ form.addEventListener("submit", function(event) {
     const password = passwordInput.value.trim();
     const comments = commentTextarea.value.trim();
     const title = titleSelect.value;
-    const selectedCardType = Array.from(cardtypeRadios).find(radio => radio.checked)?.value || "None";
+    const selectedDrinkType = Array.from(drinkTypeRadios).find(radio => radio.checked)?.value || "None";
 
     // Validation
     if (username === "" || password === "") {
@@ -81,11 +81,11 @@ form.addEventListener("submit", function(event) {
     console.log("Password:", password);  // Note: Avoid logging passwords in real applications
     console.log("Comments:", comments);
     console.log("Title:", title);
-    console.log("Selected Card Type:", selectedCardType);
+    console.log("Selected Card Type:", selectedDrinkType);
 
     document.getElementById("output").innerText = `Form Submitted!
     Username: ${username}
     Title: ${title}
-    Selected Card Type: ${selectedCardType}
+    Selected Drink Type: ${selectedDrinkType}
     Comments: ${comments}`;
 });
