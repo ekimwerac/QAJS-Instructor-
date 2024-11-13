@@ -1,6 +1,6 @@
 ## Demonstration of Module 11: JavaScript Events
 
-Here are the files `index.html`, `styles.css`, and `index.js`, each set up to demonstrate the concepts from the slides in your PowerPoint. Each example in `index.js` includes comments to describe the point being demonstrated and can be uncommented for demonstration purposes.
+Here are the files `index.html`, `styles.css`, and `index.js`, each set up to demonstrate the concepts from the slides in Module 11: JavaScript Events. Each example in `index.js` includes comments to describe the point being demonstrated and can be uncommented for demonstration purposes.
 
 ### `index.html`
 
