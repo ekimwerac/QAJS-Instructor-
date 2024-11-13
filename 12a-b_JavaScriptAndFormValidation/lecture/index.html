@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Form Handling</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>JavaScript Form Handling Demonstrations</h1>
+
+    <form id="demoForm" action="/submit" method="POST">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required><br><br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required><br><br>
+
+        <label for="comments">Comments:</label>
+        <textarea id="comments" name="comments" rows="4" cols="30"></textarea><br><br>
+
+        <label>Preferred Drink:</label>
+        <input type="radio" id="tea" name="drink" value="tea">
+        <label for="tea">Tea</label>
+        <input type="radio" id="coffee" name="drink" value="coffee">
+        <label for="coffee">Coffee</label>
+        <input type="radio" id="chocolate" name="drink" value="chocolate">
+        <label for="chocolate">Chocolate</label><br><br>
+
+        <label for="title">Title:</label>
+        <select id="title" name="title">
+            <option value="Dr">Dr</option>
+            <option value="Ms">Ms</option>
+            <option value="Mr">Mr</option>
+        </select><br><br>
+
+        <button type="submit">Submit</button>
+        <button type="reset">Reset</button>
+    </form>
+
+    <div id="output"></div>
+
+    <script src="index.js"></script>
+</body>
+</html>

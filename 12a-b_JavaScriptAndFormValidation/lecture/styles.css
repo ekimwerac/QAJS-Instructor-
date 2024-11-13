@@ -1,0 +1,30 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+h1 {
+    color: #333;
+}
+
+form {
+    max-width: 400px;
+    margin-top: 20px;
+}
+
+label {
+    display: inline-block;
+    width: 100px;
+}
+
+input, textarea, select, button {
+    margin-top: 5px;
+    padding: 8px;
+    font-size: 1em;
+}
+
+#output {
+    margin-top: 20px;
+    font-style: italic;
+    color: #333;
+}
