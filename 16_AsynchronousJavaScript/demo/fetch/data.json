@@ -1,0 +1,9 @@
+{
+    "data": [
+      { "id": 1, "name": "React Rangers", "score": 3 },
+      { "id": 2, "name": "Angular Athletic", "score": 0 },
+      { "id": 3, "name": "Vue Victors", "score": 2 },
+      { "id": 4, "name": "Svelte Sprinters", "score": 1 }
+    ]
+  }
+  
